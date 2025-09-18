@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>techwanihindi - टेक्नोलॉजी ब्लॉग</title>
+<style>
+  /* बेसिक बॉडी स्टाइल */
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+  }
+
+  /* हेडर का स्टाइल */
+  header {
+    background-color: #0d6efd; /* नीला रंग */
+    color: white;
+    padding: 25px 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  /* नेविगेशन लिंक का स्टाइल */
+  nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+
+  nav a:hover {
+    color: #ffc107; /* सुनहरा रंग */
+    text-decoration: underline;
+  }
+
+  /* सेक्शन का स्टाइल */
+#new-post {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-top: 20px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* पोस्ट्स का स्टाइल */
+main article {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+main article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* हेडिंग और टेक्स्ट का स्टाइल */
+h2 {
+  color: #0d6efd; /* नीला */
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* फूटर का स्टाइल */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* बटन का स्टाइल */
+button {
+  background-color: #0d6efd;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0956b2;
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>techwanihindi</h1>
+  <nav>
+    <a href="#">होम</a> | 
+    <a href="#new-post">नई पोस्ट जोड़ें</a>
+  </nav>
+</header>
+
+<!-- नई पोस्ट बनाने का सेक्शन -->
+<section id="new-post">
+  <h2>नई पोस्ट जोड़ें</h2>
+  <form id="postForm">
+    <label>शीर्षक: </label><br>
+    <input type="text" id="postTitle" required style="width: 100%; padding: 10px; margin-bottom: 10px;"><br>
+    <label>सामग्री: </label><br>
+    <textarea id="postContent" rows="4" required style="width: 100%; padding: 10px; margin-bottom: 10px;"></textarea><br>
+    <button type="submit">जोड़ें</button>
+  </form>
+</section>
+
+<!-- पोस्ट्स का मुख्य भाग -->
+<main>
+  <article>
+    <h2>नई तकनीकें और इनका उपयोग</h2>
+    <p>आज हम चर्चा करेंगे नई तकनीकों की और उनके रोजमर्रा के जीवन में उपयोग की।</p>
+  </article>
+  <article>
+    <h2>बेस्ट स्मार्टफोन गाइड 2025</h2>
+    <p>इस साल के सबसे अच्छे स्मार्टफोन कौन से हैं? आइए जानते हैं।</p>
+  </article>
+</main>
+
+<!-- फुटर -->
+<footer>
+  &copy; 2025 techwanihindi. सभी अधिकार सुरक्षित।
+</footer>
+
+<!-- जावास्क्रिप्ट से नई पोस्ट जोड़ने का कोड -->
+<script>
+  document.getElementById('postForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const title = document.getElementById('postTitle').value;
+    const content = document.getElementById('postContent').value;
+
+    const newPost = document.createElement('article');
+    newPost.innerHTML = `<h2>${title}</h2><p>${content}</p>`;
+
+    document.querySelector('main').appendChild(newPost);
+    document.getElementById('postForm').reset();
+  });
+</script>
+</body>
+</html>
